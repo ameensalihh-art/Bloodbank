@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>LifeDrop - Blood Donation Centers</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- ================= NAVBAR ================= -->
+
+    <header>
+        <nav class="navbar">
+
+            <div class="logo">
+                🩸 <span>LifeDrop</span>
+            </div>
+
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#centers">Blood Centers</a></li>
+                <li><a href="#groups">Blood Groups</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+
+            <button class="donate-btn" onclick="scrollToCenters()">
+                Find a Center
+            </button>
+
+        </nav>
+    </header>
+
+
+    <!-- ================= HERO SECTION ================= -->
+
+    <section id="home" class="hero">
+
+        <div class="hero-content">
+
+            <div class="hero-text">
+
+                <span class="small-title">🩸 SAVE LIVES • DONATE BLOOD</span>
+
+                <h1>
+                    Every Drop of Blood
+                    <span>Can Save a Life.</span>
+                </h1>
+
+                <p>
+                    Find blood donation centers across India and
+                    help someone in need. Your donation can make
+                    someone's tomorrow possible.
+                </p>
+
+                <div class="hero-buttons">
+
+                    <button class="primary-btn" onclick="scrollToCenters()">
+                        Find Blood Centers
+                    </button>
+
+                    <button class="secondary-btn" onclick="scrollToGroups()">
+                        Learn About Blood Groups
+                    </button>
+
+                </div>
+
+            </div>
+
+            <div class="hero-card">
+
+                <div class="blood-drop">
+                    🩸
+                </div>
+
+                <h2>Donate Blood</h2>
+
+                <p>
+                    One donation can help save multiple lives.
+                </p>
+
+                <div class="hero-stat">
+                    <strong>1</strong>
+                    <span>Donation</span>
+                </div>
+
+                <div class="hero-stat">
+                    <strong>3</strong>
+                    <span>Lives can be helped</span>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= SEARCH SECTION ================= -->
+
+    <section class="search-section">
+
+        <div class="search-container">
+
+            <h2>Find a Blood Donation Center</h2>
+
+            <p>
+                Search for blood banks and donation centers near you.
+            </p>
+
+            <div class="search-box">
+
+                <input
+                    type="text"
+                    id="searchInput"
+                    placeholder="Search by center name or city..."
+                >
+
+                <select id="bloodFilter">
+
+                    <option value="all">All Blood Groups</option>
+                    <option value="A+">A+</option>
+                    <option value="A-">A-</option>
+                    <option value="B+">B+</option>
+                    <option value="B-">B-</option>
+                    <option value="AB+">AB+</option>
+                    <option value="AB-">AB-</option>
+                    <option value="O+">O+</option>
+                    <option value="O-">O-</option>
+
+                </select>
+
+                <button onclick="searchCenters()">
+                    🔍 Search
+                </button>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= CENTERS ================= -->
+
+    <section id="centers" class="centers-section">
+
+        <div class="section-heading">
+
+            <span>OUR DIRECTORY</span>
+
+            <h2>Blood Donation Centers</h2>
+
+            <p>
+                Explore blood banks and donation centers in different
+                cities across India.
+            </p>
+
+        </div>
+
+        <div id="centerContainer" class="center-container">
+
+            <!-- Cards will be created using JavaScript -->
+
+        </div>
+
+        <p id="noResults" class="no-results">
+            No blood centers found.
+        </p>
+
+    </section>
+
+
+    <!-- ================= BLOOD GROUPS ================= -->
+
+    <section id="groups" class="groups-section">
+
+        <div class="section-heading">
+
+            <span>KNOW YOUR BLOOD GROUP</span>
+
+            <h2>Blood Group Compatibility</h2>
+
+            <p>
+                Understanding blood groups is important during
+                blood donation and transfusion.
+            </p>
+
+        </div>
+
+
+        <div class="blood-groups">
+
+            <div class="blood-card">
+                <div class="blood-type">A+</div>
+                <h3>A Positive</h3>
+                <p>Can donate to A+ and AB+.</p>
+                <p>Can receive from A+, A-, O+, O-.</p>
+            </div>
+
+
+            <div class="blood-card">
+                <div class="blood-type">A-</div>
+                <h3>A Negative</h3>
+                <p>Can donate to A+, A-, AB+, AB-.</p>
+                <p>Can receive from A- and O-.</p>
+            </div>
+
+
+            <div class="blood-card">
+                <div class="blood-type">B+</div>
+                <h3>B Positive</h3>
+                <p>Can donate to B+ and AB+.</p>
+                <p>Can receive from B+, B-, O+, O-.</p>
+            </div>
+
+
+            <div class="blood-card">
+                <div class="blood-type">B-</div>
+                <h3>B Negative</h3>
+                <p>Can donate to B+, B-, AB+, AB-.</p>
+                <p>Can receive from B- and O-.</p>
+            </div>
+
+
+            <div class="blood-card">
+                <div class="blood-type">AB+</div>
+                <h3>AB Positive</h3>
+                <p>Can donate to AB+.</p>
+                <p>Can receive from all blood groups.</p>
+            </div>
+
+
+            <div class="blood-card">
+                <div class="blood-type">AB-</div>
+                <h3>AB Negative</h3>
+                <p>Can donate to AB+ and AB-.</p>
+                <p>Can receive from AB-, A-, B-, O-.</p>
+            </div>
+
+
+            <div class="blood-card">
+                <div class="blood-type">O+</div>
+                <h3>O Positive</h3>
+                <p>Can donate to O+, A+, B+, AB+.</p>
+                <p>Can receive from O+ and O-.</p>
+            </div>
+
+
+            <div class="blood-card">
+                <div class="blood-type">O-</div>
+                <h3>O Negative</h3>
+                <p>Can donate to all blood groups.</p>
+                <p>Can receive from O-.</p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= ABOUT ================= -->
+
+    <section id="about" class="about-section">
+
+        <div class="about-content">
+
+            <div class="about-image">
+                🩸
+            </div>
+
+            <div class="about-text">
+
+                <span>ABOUT LIFEDROP</span>
+
+                <h2>
+                    Connecting Donors With
+                    Those Who Need Help
+                </h2>
+
+                <p>
+                    LifeDrop is a blood donation center directory
+                    designed to help people easily find blood banks
+                    and donation centers in India.
+                </p>
+
+                <p>
+                    Our goal is to make information about blood
+                    donation centers easier to access and encourage
+                    more people to become blood donors.
+                </p>
+
+                <div class="about-points">
+
+                    <div>
+                        ✓ Easy center search
+                    </div>
+
+                    <div>
+                        ✓ City-based directory
+                    </div>
+
+                    <div>
+                        ✓ Blood group information
+                    </div>
+
+                    <div>
+                        ✓ Simple and user-friendly interface
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= CTA ================= -->
+
+    <section class="cta">
+
+        <h2>Be Someone's Reason to Live ❤️</h2>
+
+        <p>
+            Your blood donation could be the difference between
+            life and death for someone.
+        </p>
+
+        <button onclick="scrollToCenters()">
+            Find a Donation Center
+        </button>
+
+    </section>
+
+
+    <!-- ================= CONTACT ================= -->
+
+    <section id="contact" class="contact-section">
+
+        <div class="section-heading">
+
+            <span>GET IN TOUCH</span>
+
+            <h2>Contact Us</h2>
+
+            <p>
+                Have questions about blood donation?
+                Send us a message.
+            </p>
+
+        </div>
+
+
+        <form class="contact-form" onsubmit="submitForm(event)">
+
+            <input
+                type="text"
+                id="name"
+                placeholder="Your Name"
+                required
+            >
+
+            <input
+                type="email"
+                id="email"
+                placeholder="Your Email"
+                required
+            >
+
+            <input
+                type="text"
+                id="subject"
+                placeholder="Subject"
+                required
+            >
+
+            <textarea
+                id="message"
+                placeholder="Your Message"
+                rows="5"
+                required
+            ></textarea>
+
+            <button type="submit">
+                Send Message
+            </button>
+
+        </form>
+
+    </section>
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+
+        <div class="footer-content">
+
+            <div>
+                <h2>🩸 LifeDrop</h2>
+
+                <p>
+                    Connecting blood donors with
+                    donation centers across India.
+                </p>
+            </div>
+
+            <div>
+                <h3>Quick Links</h3>
+
+                <a href="#home">Home</a>
+                <a href="#centers">Blood Centers</a>
+                <a href="#groups">Blood Groups</a>
+                <a href="#about">About</a>
+            </div>
+
+            <div>
+                <h3>Emergency</h3>
+
+                <p>Need blood urgently?</p>
+
+                <strong>📞 Call your nearest blood bank</strong>
+            </div>
+
+        </div>
+
+        <div class="copyright">
+
+            © 2026 LifeDrop Blood Donation Directory.
+            BSc Computer Science Project.
+
+        </div>
+
+    </footer>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
